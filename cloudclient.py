@@ -1,10 +1,18 @@
 import random
 from dwave.cloud import Client
 
+with Client.from_config() as client:
+    print("client.token\t\t", client.token)
+    print("client.get_solvers()\t\t", client.get_solvers())
+    print("client.get_solver()\t\t", client.get_solver())
+    print()
+
+
 # Connect using the default or environment connection information
 with Client.from_config() as client:
 
     # Load the default solver
+    print("Load the default solver")
     solver = client.get_solver()
     print(solver)
 
